@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Bell, ChevronDown, Search, User } from "lucide-react";
+import { useSelector } from "react-redux";
+
 import logo from "../../assets/images/logo.png";
 import styles from "./BrowseHeader.module.css";
 
@@ -9,11 +11,18 @@ function BrowseHeader({ onLogout }) {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const user = useSelector((state) => state.user.user);
+
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -24,12 +33,29 @@ function BrowseHeader({ onLogout }) {
         </Link>
 
         <nav className={styles.nav} aria-label="Primary navigation">
-          <Link className={styles.navLink} to="/browse">Home</Link>
-          <Link className={styles.navLink} to="/browse">TV Shows</Link>
-          <Link className={styles.navLink} to="/browse">Movies</Link>
-          <Link className={styles.navLink} to="/browse">New & Popular</Link>
-          <Link className={styles.navLink} to="/browse">My List</Link>
-          <Link className={styles.navLink} to="/browse">Browse by Language</Link>
+          <Link className={styles.navLink} to="/browse">
+            Home
+          </Link>
+
+          <Link className={styles.navLink} to="/browse">
+            TV Shows
+          </Link>
+
+          <Link className={styles.navLink} to="/browse">
+            Movies
+          </Link>
+
+          <Link className={styles.navLink} to="/browse">
+            New & Popular
+          </Link>
+
+          <Link className={styles.navLink} to="/browse">
+            My List
+          </Link>
+
+          <Link className={styles.navLink} to="/browse">
+            Browse by Language
+          </Link>
         </nav>
 
         <div className={styles.rightSection}>
@@ -53,8 +79,13 @@ function BrowseHeader({ onLogout }) {
             )}
           </div>
 
-          <button type="button" className={styles.iconButton} aria-label="Notifications">
+          <button
+            type="button"
+            className={styles.iconButton}
+            aria-label="Notifications"
+          >
             <Bell size={20} />
+
             <span className={styles.notificationBadge} aria-hidden="true" />
           </button>
 
@@ -68,14 +99,39 @@ function BrowseHeader({ onLogout }) {
               <div className={styles.profileAvatar}>
                 <User size={20} />
               </div>
+
               <ChevronDown size={20} />
             </button>
 
             {isProfileOpen && (
               <div className={styles.profileMenu}>
-                <Link className={styles.profileMenuItem} to="/browse">Account</Link>
-                <Link className={styles.profileMenuItem} to="/browse">Help Center</Link>
+                {/* Logged-in user */}
+                <div className={styles.profileUserInfo}>
+                  <span className={styles.profileUserName}>
+                    {user?.full_name || "User"}
+                  </span>
+
+                  <span className={styles.profileUserEmail}>
+                    {user?.email || ""}
+                  </span>
+                </div>
+
                 <hr className={styles.profileMenuDivider} />
+
+                <Link className={styles.profileMenuItem} to="/browse">
+                  Account
+                </Link>
+
+                <Link className={styles.profileMenuItem} to="/browse">
+                  My List
+                </Link>
+
+                <Link className={styles.profileMenuItem} to="/browse">
+                  Help Center
+                </Link>
+
+                <hr className={styles.profileMenuDivider} />
+
                 <button
                   type="button"
                   className={styles.profileMenuItem}

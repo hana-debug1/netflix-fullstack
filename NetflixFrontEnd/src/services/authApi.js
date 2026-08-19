@@ -34,7 +34,7 @@ export const login = (payload) =>
     body: JSON.stringify(payload),
   });
 
-export const getMe = () => request("/auth/me");
+export const getMe = () => request("/users/me");
 
 export const logout = () =>
   request("/auth/logout", {

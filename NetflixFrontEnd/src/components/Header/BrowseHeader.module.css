@@ -259,4 +259,23 @@
   backdrop-filter: none;
 }
 
-.profileMenuItem { font-family: inherit; }
+.profileMenuItem {
+  font-family: inherit;
+}
+
+.profileUserInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+}
+
+.profileUserName {
+  color: white;
+  font-weight: 600;
+}
+
+.profileUserEmail {
+  color: #aaa;
+  font-size: 12px;
+  margin-top: 4px;
+}
