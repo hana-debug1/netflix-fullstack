@@ -1,0 +1,129 @@
+.cardWrapper {
+  position: relative;
+  width: 290px;
+  height: 198px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: visible;
+  z-index: 1;
+}
+
+.cardWrapper:hover .hoverCard {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+
+.hoverCard:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+.hoverImage {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.poster {
+  width: 277px;
+  height: 128px;
+  border-radius: 6px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.hoverCard {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  width: 320px;
+  min-height: 305px;
+  height: auto;
+  background: #111;
+  border-radius: 8px;
+  overflow: visible;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
+  /*hidden by default*/
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+  /*optimization*/
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  pointer-events: none;
+  z-index: 999999;
+}
+
+.badge {
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 10px 0 0 12px;
+  font-weight: 500;
+}
+
+.buttonsRow {
+  display: flex;
+  gap: 8px;
+  margin: 12px;
+  align-items: center;
+}
+
+.metaRow {
+  color: white;
+  display: flex;
+  gap: 10px;
+  margin: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.circleButtonSmall {
+  border-radius: 50%;
+  background: rgba(34, 34, 34, 0.8);
+  border: 1px solid #555;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.circleButtonSmall:hover {
+  background: #333;
+  border-color: #777;
+}
+
+.circleButton:hover {
+  transform: scale(1.05);
+}
+.dot {
+  color: #888;
+  margin: 0 4px;
+}
+.genres {
+  color: #bbb;
+  font-size: 13px;
+  margin: 6px 12px 12px 12px;
+  line-height: 1.4;
+}
+
+.circleButton { color: white; cursor: pointer; transition: transform 0.2s ease; }

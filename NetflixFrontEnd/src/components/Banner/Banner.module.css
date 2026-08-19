@@ -1,0 +1,70 @@
+.banner {
+  color: white;
+  object-fit: contain;
+  background-image: url("../../assets/images/banner.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.contents {
+  padding-left: 15px;
+  padding-top: 330px;
+}
+.logoImg {
+  width: 150px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+.description {
+  font-size: 23px;
+  line-height: 1.3;
+  padding-top: 0.5rem;
+  max-width: 740px;
+  height: 80px;
+}
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  color: black;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 0.2vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: white;
+}
+
+.button:hover {
+  color: white;
+  background-color: rgba(51, 51, 51, 0.5);
+  transition: 0.2s;
+}
+
+.fadeBottom {
+  height: 11rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgb(37, 37, 37, 0.61),
+    #111
+  );
+  width: 100%;
+}

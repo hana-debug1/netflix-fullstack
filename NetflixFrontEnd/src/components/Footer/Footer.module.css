@@ -1,0 +1,183 @@
+.footer {
+  background-color: #000;
+  color: #b3b3b3;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.footerContainer {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* SOCIAL MEDIA */
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 25px;
+}
+
+.socialIcons a {
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.socialIcons a:hover {
+  color: #b3b3b3;
+  transform: translateY(-2px);
+}
+
+/* QUESTIONS */
+
+.questions {
+  margin: 0 0 35px;
+  font-size: 16px;
+  color: #b3b3b3;
+}
+
+.questions a {
+  color: #b3b3b3;
+  text-decoration: underline;
+}
+
+.questions a:hover {
+  color: #fff;
+}
+
+/* FOOTER LINKS */
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px 60px;
+  margin-bottom: 45px;
+}
+
+.linkColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.linkColumn a {
+  color: #b3b3b3;
+  font-size: 14px;
+  text-decoration: underline;
+  width: fit-content;
+  transition: color 0.2s ease;
+}
+
+.linkColumn a:hover {
+  color: #fff;
+}
+
+/* LANGUAGE */
+
+.languageWrapper {
+  margin-bottom: 35px;
+}
+
+.languageSelect {
+  min-width: 150px;
+  padding: 9px 35px 9px 12px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: 1px solid #737373;
+  border-radius: 3px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.languageSelect:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* COUNTRY */
+
+.country {
+  color: #b3b3b3;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .footerContainer {
+    width: 88%;
+  }
+
+  .linksGrid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 0;
+  }
+
+  .footerContainer {
+    width: 85%;
+  }
+
+  .socialIcons {
+    gap: 20px;
+  }
+
+  .socialIcons a {
+    font-size: 20px;
+  }
+
+  .questions {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .linksGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 25px;
+    margin-bottom: 35px;
+  }
+
+  .linkColumn {
+    gap: 16px;
+  }
+
+  .linkColumn a {
+    font-size: 13px;
+  }
+
+  .languageSelect {
+    min-width: 140px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+  .linksGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .socialIcons {
+    gap: 18px;
+  }
+}

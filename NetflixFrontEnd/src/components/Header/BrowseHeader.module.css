@@ -1,0 +1,262 @@
+/* Header Part */
+.header {
+  background: transparent;
+  padding: 16px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+  transition: background-color 0.4s ease;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 40px;
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* Nav Section */
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex: 1;
+}
+
+.navLink {
+  color: #f5f5f1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: #b3b3b0;
+}
+
+/* Right side Section */
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  color: #f5f5f1;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.searchButton:hover {
+  color: #b3b3b0;
+}
+
+.searchInput {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #808080;
+  color: #f5f5f1;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.iconButton {
+  position: relative;
+  background: none;
+  border: none;
+  color: #f5f5f1;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+.notificationBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background-color: #e50914;
+  border-radius: 50%;
+}
+
+.profileContainer {
+  position: relative;
+}
+
+.profileButton {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f5f5f1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.profileButton:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.profileAvatar {
+  width: 32px;
+  height: 32px;
+  background-color: #564d4d;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f1;
+  font-size: 16px;
+}
+
+.profileMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid #404040;
+  border-radius: 4px;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.profileMenuItem {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  color: #f5f5f1;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.profileMenuItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profileMenuDivider {
+  border: none;
+  border-top: 1px solid #404040;
+  margin: 8px 0;
+}
+
+/* ===Responsive ===*/
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 24px;
+    gap: 24px;
+  }
+  .nav {
+    gap: 16px;
+  }
+  .navLink {
+    font-size: 13px;
+  }
+  .searchInput {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+    gap: 16px;
+  }
+  .nav {
+    display: none;
+  }
+  .logo {
+    width: 80px;
+  }
+  .searchInput {
+    width: 120px;
+  }
+  .rightSection {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .logo {
+    width: 70px;
+  }
+  .searchInput {
+    width: 100px;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .rightSection {
+    gap: 12px;
+  }
+}
+
+.scrolled {
+  background-color: rgba(0, 0, 0, 0.92);
+  backdrop-filter: none;
+}
+
+.profileMenuItem { font-family: inherit; }
