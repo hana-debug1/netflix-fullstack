@@ -22,3 +22,14 @@ export const createUser = async (fullName, email, passwordHash) => {
     email,
   };
 };
+
+export const findUserById = async (userId) => {
+  const [rows] = await db.execute(
+    `SELECT id, full_name, email, created_at
+     FROM users
+     WHERE id = ?`,
+    [userId],
+  );
+
+  return rows[0];
+};
